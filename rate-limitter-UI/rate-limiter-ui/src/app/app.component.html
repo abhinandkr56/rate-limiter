@@ -1,0 +1,42 @@
+<div class="container">
+  <h1>SMS Rate Limiter Monitoring</h1>
+  <div class="filters">
+    <label>Account:</label>
+    <select [(ngModel)]="selectedAccount" (change)="loadBusinessNumbers()">
+      <option *ngFor="let account of accounts" [ngValue]="account">{{ account.accountName }}</option>
+    </select>
+
+    <label>Business Number:</label>
+    <select [(ngModel)]="selectedBusinessNumber" (change)="loadHistory()">
+      <option [ngValue]="null" disabled selected>Select a Business Number</option>
+      <option *ngFor="let number of businessNumbers" [ngValue]="number">{{ number.phoneNumber }}</option>
+    </select>
+
+    <label>Start Date:</label>
+    <input type="date" [(ngModel)]="startDate" (change)="loadHistory()" />
+
+    <label>End Date:</label>
+    <input type="date" [(ngModel)]="endDate" (change)="loadHistory()" />
+    <button (click)="resetFilters()">Reset</button>
+
+  </div>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Account Name</th>
+        <th>Business Phone</th>
+        <th>Timestamp</th>
+        <th>Allowed</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let entry of history">
+        <td>{{ selectedAccount.accountName }}</td>
+        <td>{{ entry.businessPhone }}</td>
+        <td>{{ entry.timestamp | date: 'medium' }}</td>
+        <td>{{ entry.allowed ? 'Yes' : 'No' }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
