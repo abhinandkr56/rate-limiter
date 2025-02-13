@@ -1,13 +1,13 @@
 # SMS Rate Limiter Microservice
 
 ## Overview
-The **SMS Rate Limiter Microservice** is a .NET Core application designed to manage and enforce rate limits for sending SMS messages. It ensures that messages are sent without exceeding the provider's global and per-business number limits. The service integrates with **MongoDB** for persistent storage and **Memcached** for in-memory rate limiting. It also provides a web interface built with **Angular** for monitoring and filtering historical data.
+The **SMS Rate Limiter Microservice** is a .NET Core application designed to manage and enforce rate limits for sending SMS messages. It ensures that messages are sent without exceeding the provider's global and per-business number limits. The service integrates with **MongoDB** for persistent storage and **IMemmory Cache** for in-memory rate limiting. It also provides a web interface built with **Angular** for monitoring and filtering historical data.
 
 ## Features
 
 ### Rate Limiting:
 - Enforces global and per-business number rate limits.
-- Uses **Memcached** for real-time rate limiting.
+- Uses **¸** for real-time rate limiting.
 
 ### Persistent Storage:
 - Stores accounts, business numbers, and rate limit history in **MongoDB**.
@@ -21,14 +21,14 @@ The **SMS Rate Limiter Microservice** is a .NET Core application designed to man
 ### Scalability:
 - Designed to handle high volumes of requests.
 - Uses **MongoDB** for scalable and persistent storage.
-- Uses **Memcached** for distributed in-memory rate limiting.
+- Uses **IMemmory Cache** for in-memory rate limiting.
 
 ## Architecture
 
 ### Components
 
 #### .NET Core Microservice:
-- **RateLimitService**: Manages rate limiting logic using Memcached.
+- **RateLimitService**: Manages rate limiting logic using IMemmory Cache.
 - **MongoService**: Handles interactions with MongoDB.
 - **API Controllers**: Expose endpoints for rate limiting and monitoring.
 
@@ -39,7 +39,7 @@ The **SMS Rate Limiter Microservice** is a .NET Core application designed to man
 #### MongoDB:
 - Stores accounts, business numbers, and rate limit history.
 
-#### Memcached:
+#### IMemmory Cache:
 - Provides in-memory caching for real-time rate limiting.
 
 ## Database Design
