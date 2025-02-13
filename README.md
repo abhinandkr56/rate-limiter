@@ -144,4 +144,34 @@ Retrieves historical rate limit data.
   }
 ]
 ```
+# Angular Web Interface
 
+## Features
+
+- **Account Dropdown**:  
+  - Displays a list of accounts.  
+  - Defaults to the primary account.  
+
+- **Business Number Filter**:  
+  - Filters data by business number.  
+
+- **Date Range Filter**:  
+  - Filters data by a specified date range.  
+
+- **Real-Time Monitoring**:  
+  - Displays global and per-business number rates.  
+
+## Setup and Deployment  
+
+# Seeding MongoDB Data
+
+After starting MongoDB using Docker, you need to manually insert initial data into the database.
+
+## Step 1: Connect to MongoDB  
+Run the following command to enter the MongoDB shell inside the container:  
+
+```bash
+docker exec -it sms-rate-limiter-mongodb-1 mongosh
+```
+
+execute the init.js script directly
